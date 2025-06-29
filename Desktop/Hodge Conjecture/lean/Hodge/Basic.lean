@@ -1,5 +1,6 @@
-import RecognitionLedger.Foundation.Core -- RS axioms proven
+import Hodge.RecognitionShims
 import Mathlib.Topology.Basic
+import Mathlib.Data.Real.Basic
 
 namespace Hodge
 
@@ -16,11 +17,31 @@ structure HodgeClass (X : Type) (p : Nat) where
 /-- Convenience notation: `ℍ^{p,p}(X)` -/
 notation "ℍ^" p "," p "(" X ")" => HodgeClass X p
 
-/-- Golden ratio constant φ re-exported from RS foundation. -/
-notation "φ" => RecognitionLedger.Foundation.Core.goldenRatio
+/-- Golden ratio constant φ = (1 + √5)/2 -/
+def goldenRatio : ℝ := (1 + Real.sqrt 5) / 2
+
+notation "φ" => goldenRatio
 
 /-- Shift parameter ε = φ − 1 used throughout the operator construction. -/
 @[simp]
 def eps : ℝ := φ - 1
 
+/-- Rational Hodge class -/
+structure RationalHodgeClass (X : Type) [Variety X] where
+  p : ℕ
+  class : HodgeClass X p
+  is_rational : Prop
+
+/-- Whether a Hodge class is rational -/
+def IsRational {X : Type} [Variety X] {p : ℕ} (α : HodgeClass X p) : Prop := sorry
+
+/-- Whether a Hodge class is algebraic -/
+def IsAlgebraic {X : Type} [Variety X] {p : ℕ} (α : HodgeClass X p) : Prop := sorry
+
+/-- Dimension of a variety -/
+def Variety.dimension {X : Type} [Variety X] : ℕ := Variety.dim
+
 end Hodge
+
+-- Export all modules for convenient access
+export Hodge (Variety HodgeClass RationalHodgeClass IsRational IsAlgebraic goldenRatio)

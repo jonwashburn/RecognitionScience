@@ -1,10 +1,11 @@
 import Hodge.Basic
+import Hodge.RecognitionShims
 import Mathlib.Analysis.InnerProductSpace.l2Space
 import Mathlib.Analysis.SpecialFunctions.Pow.Real
 import Mathlib.NumberTheory.ArithmeticFunction
 import Mathlib.Topology.Algebra.InfiniteSum.Basic
 
-open Real
+open Real RecognitionScience
 
 /-!
 # Ledger Embedding of Hodge Classes

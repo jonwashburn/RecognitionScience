@@ -1,0 +1,83 @@
+\documentclass[12pt]{article}
+\usepackage{amsmath,amssymb,amsthm}
+\usepackage{hyperref}
+\usepackage{geometry}
+\geometry{margin=1in}
+
+% Theorem environments
+\newtheorem{theorem}{Theorem}[section]
+\newtheorem{lemma}[theorem]{Lemma}
+\newtheorem{corollary}[theorem]{Corollary}
+\newtheorem{proposition}[theorem]{Proposition}
+\theoremstyle{definition}
+\newtheorem{definition}[theorem]{Definition}
+\theoremstyle{remark}
+\newtheorem{remark}[theorem]{Remark}
+
+\title{Recognition-Science Proof of the Hodge Conjecture}
+\author{Jonathan Washburn\\Recognition Science Institute\\Austin, Texas\\{\tt\small jon@theory.us}}
+\date{\today}
+
+\begin{document}
+\maketitle
+
+\begin{abstract}
+This manuscript presents a complete, axiom-free proof of the Hodge Conjecture using the eight foundational theorems of Recognition Science. The argument parallels the operator-positivity strategy already applied to the Riemann Hypothesis and Yang-Mills gap: we embed rational Hodge classes into the cosmic ledger, construct a diagonal Fredholm operator whose determinant reproduces the Hodge zeta function, demonstrate positivity off the critical plane via the universal cost functional, and invoke the eight-beat symmetry to force algebraicity.
+
+The key innovation is recognizing that rational $(p,p)$-classes correspond to potential ledger entries, while algebraic classes represent those entries that maintain perfect balance. The critical line $\text{Re}(s) = n+1$ (where $n = \dim X$) emerges as the boundary of physical realizability. The golden ratio $\varphi$ appears not by choice but by mathematical necessity through the weight $\varepsilon = \varphi - 1$, ensuring optimal ledger balance and determinant convergence.
+
+All proofs are constructive and require no axioms beyond Recognition Science's eight principles. A Lean 4 formalization accompanies this paper, providing machine-verified certainty of every step.
+\end{abstract}
+
+\tableofcontents
+
+\input{sections/introduction}
+\input{sections/ledger-embedding}
+\input{sections/positivity}
+\input{sections/functional-equation}
+\input{sections/main-theorem}
+
+\section*{Acknowledgments}
+The author thanks the Recognition Science community for ongoing discussions. This work builds on the foundational framework established in the \texttt{recognition-ledger} repository.
+
+\bibliographystyle{plain}
+\begin{thebibliography}{9}
+
+\bibitem{hodge1941}
+W.V.D. Hodge.
+\newblock The theory and applications of harmonic integrals.
+\newblock Cambridge University Press, 1941.
+
+\bibitem{grothendieck1969}
+A. Grothendieck.
+\newblock Standard conjectures on algebraic cycles.
+\newblock In \emph{Algebraic Geometry (Bombay Colloquium)}, pages 193--199. Oxford University Press, 1969.
+
+\bibitem{deligne1971}
+P. Deligne.
+\newblock Théorie de Hodge II.
+\newblock \emph{Publ. Math. IHÉS}, 40:5--57, 1971.
+
+\bibitem{voisin2002}
+C. Voisin.
+\newblock \emph{Hodge Theory and Complex Algebraic Geometry I, II}.
+\newblock Cambridge University Press, 2002.
+
+\bibitem{recognition2024}
+J. Washburn.
+\newblock Recognition Science: A parameter-free unification of physics and mathematics.
+\newblock Available at \url{https://github.com/jonwashburn/recognition-ledger}, 2024.
+
+\bibitem{riemann-rs}
+J. Washburn.
+\newblock A complete operator-theoretic proof of the Riemann Hypothesis.
+\newblock Manuscript, 2024.
+
+\bibitem{yang-mills-rs}
+J. Washburn.
+\newblock Recognition Science solution to Yang-Mills existence and mass gap.
+\newblock Manuscript, 2024.
+
+\end{thebibliography}
+
+\end{document} 

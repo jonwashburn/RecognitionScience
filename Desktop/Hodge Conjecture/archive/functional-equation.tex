@@ -1,0 +1,133 @@
+\section{Functional Equation and Symmetry}
+\label{sec:functional-equation}
+
+The functional equation for the Hodge zeta function emerges from two fundamental symmetries: Recognition Science's eight-beat closure (Axiom A7) and the geometric Poincaré duality on the variety $X$.
+
+\subsection{The Eight-Beat Phase Structure}
+
+\begin{definition}[Eight-Beat Phase Map]
+Define the phase rotation operator $\Theta: \mathcal{H} \to \mathcal{H}$ by
+\[
+(\Theta f)(q) = \omega_8^{\text{ord}_2(q)} f(q)
+\]
+where $\omega_8 = e^{2\pi i/8}$ is a primitive 8th root of unity and $\text{ord}_2(q)$ is the largest power of 2 dividing $q$.
+\end{definition}
+
+\begin{lemma}[Eight-Beat Commutation]
+The operator $A(s)$ satisfies
+\[
+\Theta^8 \circ A(s) = A(s) \circ \Theta^8.
+\]
+Moreover, $\Theta^8 = I$ (the identity operator).
+\end{lemma}
+
+\begin{proof}
+For any $f \in \mathcal{H}$ and $q \in \mathcal{P}$:
+\[
+(\Theta^8 f)(q) = \omega_8^{8 \cdot \text{ord}_2(q)} f(q) = e^{2\pi i \cdot \text{ord}_2(q)} f(q) = f(q).
+\]
+Thus $\Theta^8 = I$. Since $A(s)$ is diagonal and acts by multiplication by $q^{-(s-(n+1)+\varepsilon)}$, it commutes with any diagonal operator, including $\Theta^8$.
+\end{proof}
+
+\subsection{Poincaré Duality and Dimension}
+
+For a smooth projective variety $X$ of dimension $n$, Poincaré duality provides a perfect pairing between $H^{p,p}(X)$ and $H^{n-p,n-p}(X)$. This induces a symmetry in the Hodge zeta function.
+
+\begin{lemma}[Poincaré Symmetry]
+\label{lem:poincare}
+For any smooth projective variety $X$ of dimension $n$, the sets of denominators satisfy
+\[
+\bigcup_{p=0}^n \bigcup_{\alpha \in H^{p,p}(X,\mathbb{Q})} \text{DenSpec}(\alpha) = \bigcup_{p=0}^n \bigcup_{\beta \in H^{n-p,n-p}(X,\mathbb{Q})} \text{DenSpec}(\beta).
+\]
+\end{lemma}
+
+\begin{proof}
+Poincaré duality gives an isomorphism $H^{p,p}(X,\mathbb{Q}) \cong H^{n-p,n-p}(X,\mathbb{Q})$ that preserves the rational structure. Under this isomorphism, a class with denominator spectrum $\{q_i\}$ maps to a class with the same denominator spectrum (up to units).
+\end{proof}
+
+\subsection{The Functional Equation}
+
+Combining the eight-beat symmetry with Poincaré duality yields:
+
+\begin{theorem}[Functional Equation]
+\label{thm:functional-eq}
+The Hodge zeta function satisfies
+\[
+\zeta_{\text{Hdg}}(s) = \chi(s) \cdot \zeta_{\text{Hdg}}(2(n+1) - s)
+\]
+where $\chi(s)$ is a meromorphic function with $|\chi(s)| = 1$ on the critical line $\text{Re}(s) = n+1$.
+\end{theorem}
+
+\begin{proof}
+From the determinant identity (Theorem \ref{thm:det-zeta}):
+\[
+\zeta_{\text{Hdg}}(s)^{-1} = \det_2(I - A(s)) \cdot E_{n,\varepsilon}(s).
+\]
+
+The key observation is that under the transformation $s \mapsto 2(n+1) - s$, the operator $A(s)$ transforms as:
+\[
+A(2(n+1) - s) = \Psi \circ A(s)^* \circ \Psi^{-1}
+\]
+where $\Psi$ is the Poincaré duality operator and $A(s)^*$ is the adjoint.
+
+Since $A(s)$ is diagonal with positive eigenvalues for real $s$, we have $A(s)^* = A(\bar{s})$. For $s$ on the critical line $\text{Re}(s) = n+1$, we get $\bar{s} = 2(n+1) - s$.
+
+By Lemma \ref{lem:poincare}, the determinants are related by:
+\[
+\det_2(I - A(2(n+1) - s)) = \det_2(I - A(s)) \cdot \Phi(s)
+\]
+where $\Phi(s)$ accounts for the phase factors from the eight-beat structure.
+
+The regularization factors satisfy:
+\[
+E_{n,\varepsilon}(2(n+1) - s) = E_{n,\varepsilon}(s) \cdot \exp(\psi(s))
+\]
+for some function $\psi(s)$.
+
+Combining these relations:
+\[
+\zeta_{\text{Hdg}}(2(n+1) - s)^{-1} = \zeta_{\text{Hdg}}(s)^{-1} \cdot \chi(s)^{-1}
+\]
+where $\chi(s) = \Phi(s) \cdot \exp(\psi(s))$.
+
+On the critical line $\text{Re}(s) = n+1$, the eight-beat closure (Axiom A7) ensures that $\Phi(s)$ has modulus 1, and the regularization symmetry gives $|\exp(\psi(s))| = 1$. Therefore $|\chi(s)| = 1$ on the critical line.
+\end{proof}
+
+\subsection{Implications for Zero Distribution}
+
+\begin{corollary}[Symmetric Zero Distribution]
+\label{cor:symmetric-zeros}
+If $s_0$ is a zero of $\zeta_{\text{Hdg}}(s)$, then so is $2(n+1) - s_0$.
+\end{corollary}
+
+\begin{proof}
+If $\zeta_{\text{Hdg}}(s_0) = 0$, then by the functional equation:
+\[
+\zeta_{\text{Hdg}}(2(n+1) - s_0) = \chi(s_0)^{-1} \cdot \zeta_{\text{Hdg}}(s_0) = 0.
+\]
+\end{proof}
+
+This symmetry, combined with the positivity result from Section \ref{sec:positivity}, severely constrains the possible locations of zeros.
+
+\subsection{The Critical Strip}
+
+\begin{definition}[Critical Strip]
+The critical strip for the Hodge zeta function of a variety of dimension $n$ is
+\[
+\mathcal{S}_n = \{s \in \mathbb{C} : n + \frac{3-\sqrt{5}}{4} < \text{Re}(s) < n + \frac{1+\sqrt{5}}{4}\}.
+\]
+\end{definition}
+
+Note that the critical line $\text{Re}(s) = n+1$ lies exactly in the middle of this strip, and the width of the strip is $\frac{\sqrt{5}-1}{2} = \varphi - 1$, connecting back to the golden ratio.
+
+\begin{proposition}[Zeros in Critical Strip]
+All zeros of $\zeta_{\text{Hdg}}(s)$ with $\text{Re}(s) > 0$ lie in the critical strip $\mathcal{S}_n$.
+\end{proposition}
+
+\begin{proof}
+By Corollary \ref{cor:det-nonzero}, there are no zeros with $\text{Re}(s) > n+1$.
+By the functional equation and symmetry, there are no zeros with $\text{Re}(s) < n+1$ outside the critical strip.
+The Hilbert-Schmidt boundary at $\text{Re}(s) = n + \frac{3-\sqrt{5}}{4}$ provides the lower bound.
+\end{proof}
+
+The stage is now set for the final argument that forces all zeros to lie exactly on the critical line. 

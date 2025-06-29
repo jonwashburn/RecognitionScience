@@ -11,13 +11,13 @@ package «hodge-conjecture» where
     ⟨`relaxedAutoImplicit, false⟩
   ]
 
--- Link to mathlib4
+-- Link to mathlib4 with specific version for reproducibility
 require mathlib from git
-  "https://github.com/leanprover-community/mathlib4.git"
+  "https://github.com/leanprover-community/mathlib4.git" @ "v4.9.0"
 
--- Link to Recognition Ledger foundation
-require recognition from git
-  "https://github.com/jonwashburn/recognition-ledger.git"
+-- Link to Recognition Ledger foundation (commented out until available)
+-- require recognition from git
+--   "https://github.com/jonwashburn/recognition-ledger.git"
 
 -- Library configuration
 @[default_target]

@@ -2,7 +2,7 @@ import Hodge.Positivity
 import Mathlib.Algebra.Group.Units
 import Mathlib.NumberTheory.ZetaFunction
 
-open Real Complex
+open Real Complex RecognitionScience
 
 /-!
 # Functional Equation and Eight-Beat Symmetry

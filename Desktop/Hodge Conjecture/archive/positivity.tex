@@ -1,0 +1,99 @@
+\section{Positivity Off the Critical Plane}
+\label{sec:positivity}
+
+The heart of our proof is showing that the operator $I - A(s)$ is positive definite for $\text{Re}(s) > n+1$. This follows from Recognition Science's Positive Cost axiom (A3), which states that all recognition events carry non-negative cost.
+
+\subsection{The Norm Bound}
+
+\begin{lemma}[Operator Norm]
+\label{lem:norm-bound}
+For $s = \sigma + it$ with $\sigma = \text{Re}(s)$, we have
+\[
+\|A(s)\| = 2^{-((\sigma-(n+1))+\varepsilon)}.
+\]
+\end{lemma}
+
+\begin{proof}
+Since $A(s)$ is diagonal, its operator norm equals the supremum of the moduli of its eigenvalues:
+\[
+\|A(s)\| = \sup_{q \in \mathcal{P}} |q^{-(s-(n+1)+\varepsilon)}| = \sup_{q \in \mathcal{P}} q^{-((\sigma-(n+1))+\varepsilon)}.
+\]
+The supremum is achieved at $q = 2$ (the smallest prime power), giving $\|A(s)\| = 2^{-((\sigma-(n+1))+\varepsilon)}$.
+\end{proof}
+
+\subsection{Positivity from Recognition Cost}
+
+The key insight is that the operator $I - A(s)$ represents the ledger cost of maintaining Hodge patterns at energy scale $s$.
+
+\begin{theorem}[Positivity Off Critical Plane]
+\label{thm:positivity}
+For $\text{Re}(s) > n+1$, the operator $I - A(s)$ is positive definite.
+\end{theorem}
+
+\begin{proof}
+We need to show that $\langle (I - A(s))f, f \rangle > 0$ for all non-zero $f \in \mathcal{H}$.
+
+For $\sigma = \text{Re}(s) > n+1$, we have $(\sigma-(n+1))+\varepsilon > \varepsilon = \varphi - 1 > 0$.
+
+By Lemma \ref{lem:norm-bound}, $\|A(s)\| = 2^{-((\sigma-(n+1))+\varepsilon)} < 2^{-\varepsilon} < 1$.
+
+For any $f \in \mathcal{H}$ with $\|f\| = 1$:
+\[
+\langle (I - A(s))f, f \rangle = \langle f, f \rangle - \langle A(s)f, f \rangle = 1 - \langle A(s)f, f \rangle.
+\]
+
+Since $A(s)$ has positive eigenvalues when $s$ is real (Lemma \ref{lem:operator-props}(iii)), and by continuity for complex $s$ with $\text{Re}(s) > n+1$:
+\[
+|\langle A(s)f, f \rangle| \leq \|A(s)\| \cdot \|f\|^2 = \|A(s)\| < 1.
+\]
+
+Therefore, $\langle (I - A(s))f, f \rangle \geq 1 - \|A(s)\| > 0$.
+\end{proof}
+
+\subsection{Spectral Analysis}
+
+Since $A(s)$ is diagonal, we can analyze the spectrum explicitly.
+
+\begin{lemma}[Spectral Gap]
+\label{lem:spectral-gap}
+For $\text{Re}(s) > n+1$, the operator $I - A(s)$ has spectral gap
+\[
+\text{gap}(I - A(s)) = 1 - 2^{-((\text{Re}(s)-(n+1))+\varepsilon)} > 0.
+\]
+\end{lemma}
+
+\begin{proof}
+The eigenvalues of $I - A(s)$ are $\{1 - q^{-(s-(n+1)+\varepsilon)} : q \in \mathcal{P}\}$.
+
+For $\text{Re}(s) > n+1$:
+- The largest eigenvalue of $A(s)$ is $2^{-((\text{Re}(s)-(n+1))+\varepsilon)}$ (at $q = 2$)
+- The smallest eigenvalue of $I - A(s)$ is $1 - 2^{-((\text{Re}(s)-(n+1))+\varepsilon)}$
+- All other eigenvalues of $I - A(s)$ are larger
+
+The spectral gap is therefore $1 - 2^{-((\text{Re}(s)-(n+1))+\varepsilon)} > 0$.
+\end{proof}
+
+\subsection{Connection to Recognition Science}
+
+In the Recognition Science framework, the positivity of $I - A(s)$ has a deep interpretation:
+
+\begin{proposition}[Recognition Cost Interpretation]
+The quadratic form $\langle (I - A(s))f, f \rangle$ represents the total recognition cost of maintaining the Hodge pattern $f$ at energy scale $s$. Positivity for $\text{Re}(s) > n+1$ means that all non-trivial patterns have positive maintenance cost above the critical energy.
+\end{proposition}
+
+This aligns with Recognition Science Axiom A3: all physical processes (including pattern maintenance) require positive energy cost. The critical line $\text{Re}(s) = n+1$ represents the boundary where patterns can exist with zero cost—these are precisely the algebraic cycles.
+
+\subsection{Determinant Non-Vanishing}
+
+As an immediate consequence of positivity:
+
+\begin{corollary}[Determinant Non-Zero]
+\label{cor:det-nonzero}
+For $\text{Re}(s) > n+1$, we have $\det_2(I - A(s)) > 0$.
+\end{corollary}
+
+\begin{proof}
+A positive definite operator on a Hilbert space has strictly positive determinant. Since $I - A(s)$ is positive definite for $\text{Re}(s) > n+1$ by Theorem \ref{thm:positivity}, and $A(s)$ is Hilbert-Schmidt in this region (Lemma \ref{lem:operator-props}(ii)), the regularized determinant $\det_2(I - A(s))$ is well-defined and strictly positive.
+\end{proof}
+
+This non-vanishing will be crucial in the next section when we analyze the zeros of $\zeta_{\text{Hdg}}(s)$. 

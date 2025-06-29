@@ -1,7 +1,6 @@
 import Hodge.FunctionalEquation
-import RecognitionScience.VoxelWalk
 
-open Real Complex
+open Real Complex RecognitionScience
 
 /-!
 # The Hodge Conjecture

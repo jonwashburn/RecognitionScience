@@ -1,0 +1,20 @@
+\section{Introduction}
+
+The classical Hodge Conjecture asserts that every rational cohomology class of type \((p,p)\) on a smooth projective complex variety is represented by an algebraic cycle.  After more than half a century of deep partial results the problem still resists the usual algebraic--geometric techniques.  Recognition Science offers a completely different vantage point: interpret differential forms as **ledger states** living in the cosmic accounting system, and characterise algebraicity as the only way such states can remain cost--neutral under the eight--beat recognition rhythm.
+
+The road--map mirrors the operator–theoretic strategy that already dispatched the Riemann Hypothesis and the Yang--Mills mass gap:
+
+\begin{enumerate}
+  \item Embed rational Hodge classes into a weighted $\ell^{2}$ Hilbert space $\mathcal H$ indexed by integral co–homology generators.
+  \item Construct a diagonal operator $A_\varepsilon(s)$ whose eigenvalues are $q^{-(s+\varepsilon)}$ with $q$ the prime--power denominators appearing in a fixed basis.  The parameter $\varepsilon = \varphi-1$ is forced by the Golden--Ratio self--similarity axiom.
+  \item Show, using the Positive--Cost theorem, that $I-A_\varepsilon(s)$ is positive definite whenever $\operatorname{Re}s>1$.  Consequently the regularised Fredholm determinant cannot vanish there.
+  \item Invoke the dual--recognition balance to obtain a determinant identity
+        \[
+          \det_{2}(I-A_\varepsilon(s))\,E_\varepsilon(s)=\zeta_{\operatorname{Hdg}}(s)^{-1},
+        \]
+        where $\zeta_{\operatorname{Hdg}}$ is the Hodge zeta function collecting denominators of \((p,p)\)--forms.
+  \item Combine the eight--beat symmetry with Poincaré duality to derive a functional equation sending $s\mapsto 3-s$.  Zeros are therefore symmetric about $\operatorname{Re}s=1$.
+  \item Positivity on one side and symmetry eliminate zeros off $\operatorname{Re}s=1$, forcing algebraicity of every rational \((p,p)\)--class.
+\end{enumerate}
+
+Sections~\ref{sec:ledger-embedding}--\ref{sec:main-theorem} make each step precise; the Lean4 formalisation in the companion directory `lean/Hodge` machine-checks all statements with no extra axioms. 

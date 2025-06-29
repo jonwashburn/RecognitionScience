@@ -2,7 +2,7 @@ import Hodge.LedgerEmbedding
 import Mathlib.Analysis.InnerProductSpace.Positive
 import Mathlib.Analysis.SpecialFunctions.Log.Basic
 
-open Real Complex
+open Real Complex RecognitionScience
 
 /-!
 # Positivity Off the Critical Plane
