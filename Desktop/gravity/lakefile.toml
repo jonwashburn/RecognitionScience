@@ -1,0 +1,28 @@
+name = "gravity"
+defaultTargets = ["Gravity"]
+
+[[require]]
+name = "proofwidgets"
+path = "lake-stubs/proofwidgets"
+
+[[require]]
+name = "mathlib"
+git = "https://github.com/leanprover-community/mathlib4"
+rev = "v4.12.0"
+
+[[require]]
+name = "recognition-science"
+path = "../foundation"
+
+[[lean_lib]]
+name = "Gravity"
+roots = ["Core", "Derivations", "Validation"]
+
+# [[require]]
+# name = "proofwidgets"
+# git = "https://github.com/leanprover-community/ProofWidgets4"
+# rev = "0a86d0d45f50df08074d43e2199a741b93d7c5ed" 
+
+[[override]]
+name = "proofwidgets"
+path = "lake-stubs/proofwidgets" 
