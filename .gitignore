@@ -1,6 +1,7 @@
 # macOS metadata
 .DS_Store
 Thumbs.db
+._*
 
 # Python bytecode & cache
 __pycache__/
