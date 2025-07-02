@@ -1,16 +1,42 @@
--- import pattern.Core.Types
--- import pattern.Core.PatternAxioms
--- import pattern.Geometry.LogSpiralLattice
--- -- import Foundation.Util.Units
--- import Mathlib.Analysis.SpecialFunctions.Log.Basic
--- import Mathlib.Topology.Basic
--- import Mathlib.Data.Complex.Basic
--- import foundation.Parameters.Constants
--- open RecognitionScience.Constants Real
+import pattern.Core.PatternAxioms
+import Mathlib.Data.Real.Basic
 
-namespace pattern.Interface
+noncomputable section
 
--- All content of this file has been commented out to allow the build to proceed.
--- TODO: Restore and fix the original content piece by piece.
+open RecognitionScience.Pattern.Core
+open scoped Real
 
-end pattern.Interface
+/-!
+# Lock-In Mechanism – minimal scaffolding
+
+This stub defines the public names expected by other Pattern-Layer
+modules while we work toward a fully-fledged implementation.
+-/
+
+namespace RecognitionScience.Pattern.Interface
+
+/-- (Placeholder) recognition-cost threshold above which a pattern
+crystallises.  Eventually this will be derived from constants; for now
+we fix it to `1`. -/
+@[inline] def lockInThreshold : ℝ := 1
+
+/-- A toy formula for the time it takes a `Pattern` to reach the lock-in
+threshold.  It is deliberately simple and **not** physically accurate. -/
+@[simp] def lockInTime (p : Pattern) : ℝ := |p.info_content| / lockInThreshold
+
+/-- A record witnessing that a `Pattern` has crossed the lock-in
+threshold at some time. -/
+structure LockInEvent where
+  pattern         : Pattern
+  time            : ℝ
+  meets_threshold : lockInTime pattern ≥ lockInThreshold
+
+/-- *Conservation placeholder*: the information content of a pattern is
+unchanged by lock-in.  This is tautological here but provides a named
+lemma for downstream code to reference. -/
+@[simp] theorem lockIn_conservation (e : LockInEvent) :
+    e.pattern.info_content = e.pattern.info_content := rfl
+
+end RecognitionScience.Pattern.Interface
+
+end
