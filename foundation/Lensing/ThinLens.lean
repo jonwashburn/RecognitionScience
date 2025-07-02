@@ -1,3 +1,9 @@
+/-
+  Requires: A1 (Discrete Recognition), A4 (Unitary Evolution)
+  Imports Constants: φ, E_coh, τ₀
+  Proves/Defines: — FILL IN —
+-/
+
 import Mathlib.Analysis.Calculus.Deriv.Basic
 import Mathlib.Analysis.Calculus.FDeriv.Basic
 import Mathlib.Data.Real.Basic
