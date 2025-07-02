@@ -7,17 +7,17 @@ Pattern Layer into physical Reality Layer when maintenance cost
 exceeds 1 bit of information.
 -/
 
-import RecognitionScience.PatternLayer.Core.Types
-import RecognitionScience.PatternLayer.Core.PatternAxioms
-import RecognitionScience.PatternLayer.Geometry.LogSpiralLattice
-import Foundation.Util.Units
+import pattern.Core.Types
+import pattern.Core.PatternAxioms
+import pattern.Geometry.LogSpiralLattice
+-- import Foundation.Util.Units
 import Mathlib.Analysis.SpecialFunctions.Log.Basic
 import Mathlib.Topology.Basic
 import Mathlib.Data.Complex.Basic
 import foundation.Parameters.Constants
 open RecognitionScience.Constants
 
-namespace RecognitionScience.PatternLayer.Interface
+namespace pattern.Interface
 
 /-!
 ## Lock-In: Pattern → Reality
@@ -170,4 +170,4 @@ def patternInfo (p : Pattern) : ℝ := p.info_content
 noncomputable def lockInTime (p : Pattern) (t : ℝ) : ℝ :=
   p.info_content * log (1 + t / τ₀)
 
-end RecognitionScience.PatternLayer.Interface
+end pattern.Interface
