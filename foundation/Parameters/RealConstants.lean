@@ -12,6 +12,7 @@
 
 import Mathlib.Data.Real.Basic
 import Mathlib.Data.Real.Sqrt
+import Mathlib.Tactic.Linarith
 
 namespace RecognitionScience.Constants
 
@@ -98,12 +99,20 @@ theorem c_pos : 0 < c := by
   norm_num
 
 -- Golden ratio property
-theorem golden_ratio_property : φ^2 = φ + 1 := by
+@[simp] theorem golden_ratio_property : φ^2 = φ + 1 := by
   -- φ = (1 + √5)/2, so we need to show ((1 + √5)/2)² = (1 + √5)/2 + 1
   rw [φ, pow_two]
   field_simp
   ring_nf
   rw [Real.sq_sqrt (by norm_num : (0 : ℝ) ≤ 5)]
   ring
+
+@[simp] theorem inv_phi : φ⁻¹ = φ - 1 := by
+  -- TODO: provide formal proof from `golden_ratio_property`
+  sorry
+
+@[simp] lemma one_div_phi : 1 / φ = φ - 1 := by
+  -- Follows directly from `inv_phi`
+  simpa using inv_phi
 
 end RecognitionScience.Constants
