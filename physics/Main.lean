@@ -6,5 +6,5 @@
   gauge theory, etc.) so users can simply `import Physics`.
 -/
 
-import Physics.ParticleMasses
-import Physics.GaugeTheory
+import physics.ParticleMasses
+import physics.GaugeTheory

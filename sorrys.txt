@@ -1,0 +1,110 @@
+./bio/CellularClock/IRClock.lean:71:  sorry -- Numerical verification requires exact arithmetic
+./formal/Basic/LedgerState.lean:156:  sorry -- Requires proving L is bijective from unitarity
+./formal/Basic/LedgerState.lean:218:    sorry -- Requires proving L is bijective from unitarity
+./formal/DressingFactorDerivation.lean:42:  sorry -- Standard calculus proof
+./formal/DressingFactorDerivation.lean:68:  sorry -- Standard geometric series formula
+./formal/DressingFactorDerivation.lean:87:  sorry
+./formal/DressingFactorDerivation.lean:104:  sorry -- They all interact with photons the same way
+./formal/DressingFactorDerivation.lean:134:  sorry
+./formal/DressingFactorDerivation.lean:147:  sorry -- All light quarks confined equally
+./formal/DressingFactorDerivation.lean:165:  sorry -- Integer division property
+./formal/DressingFactorDerivation.lean:184:  sorry
+./formal/DressingFactorDerivation.lean:191:  sorry -- The shift is exactly 1/φ²
+./formal/DressingFactorDerivation.lean:244:  sorry
+./formal/DressingFactorDerivation.lean:273:  sorry -- Follows from universal QED coupling
+./formal/MassSpectrumVerification.lean:73:  sorry -- Numerical verification: error ≈ 0.0025
+./formal/MassSpectrumVerification.lean:93:  sorry -- Error ≈ 0.002
+./formal/MassSpectrumVerification.lean:105:  sorry -- Error ≈ 0.001
+./formal/MassSpectrumVerification.lean:111:  sorry -- Dressing factors cancel in ratios!
+./formal/MassSpectrumVerification.lean:130:  sorry -- Error ≈ 0.0003
+./formal/MassSpectrumVerification.lean:141:  sorry -- Error ≈ 0.0002
+./formal/MassSpectrumVerification.lean:145:  sorry -- Same dressing cancels!
+./formal/MassSpectrumVerification.lean:165:  sorry -- Error ≈ 0.0012
+./formal/MassSpectrumVerification.lean:171:  sorry -- Without octave shift, error would be ~6%
+./formal/MassSpectrumVerification.lean:246:  sorry -- Predicts ~30 GeV
+./foundation/Core/Derivations/CoherenceQuantumDerivation.lean:64:  sorry -- This requires numerical computation with Real.sqrt
+./foundation/Core/Derivations/CoherenceQuantumDerivation.lean:101:  sorry -- Numerical verification
+./foundation/Core/Derivations/CoherenceQuantumDerivation.lean:115:  sorry
+./foundation/Core/Derivations/CoherenceQuantumDerivation.lean:145:  sorry -- Numerical verification
+./foundation/Core/Derivations/CoherenceQuantumDerivation.lean:192:  sorry
+./foundation/Core/Derivations/CoherenceQuantumFixed.lean:162:        sorry
+./foundation/Core/Derivations/CoherenceQuantumFixed.lean:178:    sorry
+./foundation/Core/Derivations/CoherenceQuantumFixed.lean:220:  sorry
+./foundation/Core/Derivations/CosmicBandwidthDerivation.lean:54:  sorry -- Requires numerical computation
+./foundation/Core/Derivations/CosmicBandwidthDerivation.lean:74:  sorry -- Requires numerical computation
+./foundation/Core/Derivations/CosmicBandwidthDerivation.lean:96:  sorry -- Requires numerical computation
+./foundation/Core/Derivations/CosmicBandwidthDerivation.lean:113:  sorry
+./foundation/Core/Derivations/CosmicBandwidthDerivation.lean:118:  sorry
+./foundation/Core/Derivations/CosmicBandwidthDerivation.lean:140:  sorry
+./foundation/Core/Derivations/CosmicBandwidthDerivation.lean:159:  sorry
+./foundation/Core/Derivations/YangMillsMassGap.lean:53:    sorry
+./foundation/Core/Derivations/YangMillsMassGap.lean:107:    sorry -- TODO: Requires numerical bounds on E_coh
+./foundation/Core/Derivations/YangMillsMassGap.lean:115:    sorry -- TODO: Complete with bounds
+./foundation/Core/Derivations/YangMillsMassGap.lean:160:  sorry
+./foundation/Core/Derivations/YangMillsMassGap.lean:208:  sorry
+./foundation/Core/Derivations/YangMillsMassGap.lean:238:  sorry
+./foundation/Core/LogicalChainFix.lean:66:      sorry -- This requires formalizing "recognition requires distinction" as a principle
+./foundation/Core/LogicalChainFix.lean:109:    sorry -- This is the "existence implies recognizability" principle
+./foundation/Core/LogicalChainFix.lean:112:  sorry -- Complete the contradiction
+./foundation/Core/LogicalChainFix.lean:197:  sorry -- Technical but standard result
+./foundation/Core/LogicalChainFix.lean:216:    sorry -- Handle degenerate case
+./foundation/Core/LogicalChainFix.lean:261:        sorry -- Need to formalize minimality
+./foundation/Core/LogicalChainFix.lean:266:      sorry -- Handle maximal element case
+./foundation/Core/LogicalChainFix.lean:278:      sorry -- Time must be realizable if recognition occurs
+./foundation/Core/LogicalChainFix.lean:293:    sorry -- TODO: Complete using pigeonhole principle
+./foundation/Core/MetaPrinciple.lean:59:  sorry -- Need to formalize why self-recognition without distinction is impossible
+./foundation/Core/MetaPrinciple.lean:75:      sorry -- Need cardinality argument
+./pattern/Core/PatternTheorems.lean:52:  sorry  -- This requires connecting to Foundation 1 properly
+./pattern/Core/PatternTheorems.lean:62:    sorry  -- Add proper bounds on info_content
+./pattern/Core/PatternTheorems.lean:81:    sorry  -- Requires proper metric definition
+./pattern/Core/PatternTheorems.lean:91:  sorry  -- Connect to information conservation principle
+./.lake/packages/mathlib/Mathlib/Algebra/Homology/HomologicalComplex.lean:744:  sorry
+./.lake/packages/mathlib/Mathlib/Algebra/Homology/HomologicalComplex.lean:750:  sorry
+./.lake/packages/mathlib/Mathlib/Data/FunLike/Basic.lean:113:  sorry
+./.lake/packages/mathlib/Mathlib/Tactic/CongrM.lean:42:  sorry
+./.lake/packages/mathlib/Mathlib/Tactic/CongrM.lean:43:  sorry
+./.lake/packages/mathlib/Mathlib/Tactic/CongrM.lean:44:  sorry
+./.lake/packages/mathlib/Mathlib/Tactic/Eval.lean:29:  sorry
+./.lake/packages/mathlib/Mathlib/Tactic/Qify.lean:25:  sorry
+./.lake/packages/mathlib/Mathlib/Tactic/Qify.lean:47:  sorry
+./.lake/packages/mathlib/Mathlib/Tactic/Set.lean:42:  sorry
+./.lake/packages/mathlib/Mathlib/Tactic/SimpIntro.lean:67:  sorry
+./.lake/packages/mathlib/MathlibTest/DocString.lean:61:  sorry
+./.lake/packages/mathlib/MathlibTest/ExtractGoal.lean:60:  sorry
+./.lake/packages/mathlib/MathlibTest/ExtractGoal.lean:70:  sorry
+./.lake/packages/mathlib/MathlibTest/ExtractGoal.lean:80:  sorry
+./.lake/packages/mathlib/MathlibTest/ExtractGoal.lean:95:  sorry
+./.lake/packages/mathlib/MathlibTest/ExtractGoal.lean:106:  sorry
+./.lake/packages/mathlib/MathlibTest/ExtractGoal.lean:116:  sorry
+./.lake/packages/mathlib/MathlibTest/ExtractGoal.lean:127:  sorry
+./.lake/packages/mathlib/MathlibTest/ExtractGoal.lean:139:  sorry
+./.lake/packages/mathlib/MathlibTest/ExtractGoal.lean:151:  sorry
+./.lake/packages/mathlib/MathlibTest/ExtractGoal.lean:163:  sorry
+./.lake/packages/mathlib/MathlibTest/ExtractGoal.lean:177:  sorry
+./.lake/packages/mathlib/MathlibTest/Simproc/ExistsAndEq.lean:20:  sorry
+./.lake/packages/LeanSearchClient/LeanSearchClient/LoogleSyntax.lean:170:  sorry
+./.lake/packages/LeanSearchClient/LeanSearchClient/Syntax.lean:344:  sorry
+./.lake/packages/LeanSearchClient/LeanSearchClient/Syntax.lean:371:  sorry
+./.lake/packages/LeanSearchClient/LeanSearchClient/Syntax.lean:398:  sorry
+./.lake/packages/LeanSearchClient/LeanSearchClient/Syntax.lean:503:  sorry
+./.lake/packages/LeanSearchClient/LeanSearchClientTest/Examples.lean:44:  sorry
+./.lake/packages/LeanSearchClient/LeanSearchClientTest/Examples.lean:96:  sorry
+./.lake/packages/LeanSearchClient/LeanSearchClientTest/MoogleExamples.lean:33:  sorry
+./.lake/packages/LeanSearchClient/LeanSearchClientTest/MoogleExamples.lean:65:  sorry
+./.lake/packages/LeanSearchClient/LeanSearchClientTest/StateSearchExamples.lean:22:  sorry
+./.lake/packages/LeanSearchClient/LeanSearchClientTest/StateSearchExamples.lean:36:  sorry
+./.lake/packages/LeanSearchClient/LeanSearchClientTest/StateSearchExamples.lean:62:  sorry
+./.lake/packages/LeanSearchClient/LeanSearchClientTest/StateSearchExamples.lean:76:  sorry
+./.lake/packages/aesop/AesopTest/205.lean:24:  sorry
+./.lake/packages/aesop/AesopTest/205.lean:31:  sorry
+./.lake/packages/aesop/AesopTest/ExtScript.lean:52:    sorry
+./.lake/packages/aesop/AesopTest/ExtScript.lean:67:    sorry
+./.lake/packages/aesop/AesopTest/ExtScript.lean:69:    sorry
+./.lake/packages/aesop/AesopTest/IncompleteScript.lean:18:  sorry
+./.lake/packages/aesop/AesopTest/IncompleteScript.lean:38:sorry
+./.lake/packages/aesop/AesopTest/IncompleteScript.lean:52:  sorry
+./.lake/packages/Qq/Qq/Simp.lean:11:  sorry
+./.lake/packages/Qq/Qq/Simp.lean:16:  sorry
+./.lake/packages/batteries/BatteriesTest/conv_equals.lean:22:  sorry
+./.lake/packages/batteries/BatteriesTest/conv_equals.lean:43:  sorry
+./.lake/packages/batteries/BatteriesTest/lintunused.lean:7:  sorry
