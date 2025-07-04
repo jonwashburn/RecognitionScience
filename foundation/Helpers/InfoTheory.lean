@@ -215,3 +215,62 @@ theorem information_capacity_bound
     ≤ Real.log n := h_entropy_bound
     _ < n * Real.log golden_ratio := h_capacity
     _ = Real.log golden_ratio * n := by ring
+
+/-
+### Auxiliary calculus facts (added July 2025)
+
+These helper lemmas support the forthcoming proof of
+`rpow_one_div_self_decreasing` and are kept separate to avoid cluttering
+the main argument.
+-/
+
+import Mathlib.Analysis.Calculus.Deriv.Basic
+import Mathlib.Analysis.Calculus.MeanValue
+
+open Real Set
+
+namespace RecognitionScience.Helpers
+
+/-!  #### Derivative of `log t / t` -/
+
+lemma hasDerivAt_log_div {t : ℝ} (ht : 0 < t) :
+    HasDerivAt (fun u : ℝ => Real.log u / u) ((1 - Real.log t) / t ^ 2) t := by
+  -- rewrite as a product to reuse existing derivative lemmas
+  have h_eq : (fun u : ℝ => Real.log u / u) = fun u : ℝ => Real.log u * u⁻¹ := by
+    funext u; simp [div_eq_mul_inv]
+  -- derivative of log is 1/u, derivative of u⁻¹ is -1/u²
+  simpa [h_eq, pow_two, mul_comm, mul_left_comm, mul_assoc, div_eq_mul_inv] using
+    ((Real.hasDerivAt_log ht).mul (hasDerivAt_inv (ne_of_gt ht))).cast (by
+      field_simp [pow_two])
+
+/-!  #### Negativity of the derivative on `(e, ∞)` -/
+
+lemma deriv_log_div_neg {t : ℝ} (ht : Real.exp 1 < t) :
+    (1 - Real.log t) / t ^ 2 < 0 := by
+  have ht_pos : 0 < t := (Real.exp_pos 1).trans ht
+  have h_log : 1 < Real.log t := by
+    have : Real.log (Real.exp 1) < Real.log t := by
+      have := Real.log_lt_log (Real.exp_pos 1) ht
+      simpa using this
+    simpa using this
+  have h_den : 0 < t ^ 2 := pow_pos ht_pos 2
+  have h_num : 1 - Real.log t < 0 := by linarith
+  have : (1 - Real.log t) / t ^ 2 = (1 - Real.log t) * (t ^ 2)⁻¹ := by
+    simp [div_eq_mul_inv]
+  have h_inv_pos : 0 < (t ^ 2)⁻¹ := by
+    have : 0 < t ^ 2 := h_den
+    exact inv_pos.mpr this
+  have : (1 - Real.log t) * (t ^ 2)⁻¹ < 0 :=
+    mul_neg_of_neg_of_pos h_num h_inv_pos
+  simpa [div_eq_mul_inv] using this
+
+/-!  #### Continuity helper -/
+
+lemma continuousOn_log_div :
+    ContinuousOn (fun t : ℝ => Real.log t / t) {x : ℝ | 0 < x} := by
+  have h1 : ContinuousOn (fun t : ℝ => Real.log t) {x | 0 < x} := Real.continuousOn_log
+  have h2 : ContinuousOn (fun t : ℝ => t) {x | 0 < x} := continuousOn_id
+  simpa [div_eq_mul_inv] using h1.mul (h2.inv₀ ?_)
+  intro t ht; exact ne_of_gt ht
+
+end RecognitionScience.Helpers
