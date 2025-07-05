@@ -1,11 +1,11 @@
 import Lake
 open Lake DSL
 
-package «RecognitionScience» where
-  version := v!"0.1.0"
+package RecognitionScience where
+  -- add package configuration options here
 
 require mathlib from git
-  "https://github.com/leanprover-community/mathlib4"
+  "https://github.com/leanprover-community/mathlib4.git" @ "v4.8.0"
 
 -- Expose the zero-axiom foundation as internal libs
 lean_lib «foundation» where
@@ -36,5 +36,5 @@ lean_lib «NavierStokes» where
   srcDir := "working/NavierStokes/Src"
 
 @[default_target]
-lean_lib «RecognitionScience» where
-  roots := #[`RecognitionScience]
+lean_lib RecognitionScience where
+  -- add library configuration options here
