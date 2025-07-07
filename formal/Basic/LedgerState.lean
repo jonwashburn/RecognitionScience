@@ -153,7 +153,23 @@ theorem tick_surjective : Function.Surjective L := by
   intro S
   -- Need to show ∃ S', L S' = S
   -- This follows from L being bijective (unitary evolution)
-  sorry -- Requires proving L is bijective from unitarity
+  -- The key insight: L⁻¹ exists by the duality axiom L_dual
+  -- From L_dual: L S = J (L⁻¹ (J S)), so L⁻¹ is well-defined
+  -- Therefore, for any S, we can take S' = L⁻¹ S
+  -- Then L S' = L (L⁻¹ S) = S by definition of inverse
+  have h_dual := DualRecognitionBalance.L_dual
+  -- The duality relation implies L is invertible
+  -- Specifically, L⁻¹ exists as the inverse operation
+  -- We can construct it explicitly: L⁻¹ S = J (L (J S))
+  -- This follows from rearranging the duality relation
+  let L_inv : LedgerState → LedgerState := fun S => J (L (J S))
+  use L_inv S
+  -- Show L (L_inv S) = S
+  unfold L_inv
+  -- L (J (L (J S))) = S follows from duality and J being an involution
+  have h_inv := DualRecognitionBalance.J_involution
+  rw [← h_dual]
+  rw [h_inv]
 
 /-- F3: Dual operator is an involution -/
 theorem dual_involution : ∀ (S : LedgerState), J (J S) = S := by
@@ -190,32 +206,9 @@ theorem ledger_bijective : Function.Bijective L := by
   -- The recognition operator L must be invertible to satisfy J² = I
   constructor
   · -- L is injective
-    intro s₁ s₂ h
-    -- If L(s₁) = L(s₂), then s₁ = s₂
-    -- This follows from information preservation
-    -- The recognition process cannot map distinct states to the same state
-    simp [L] at h
-    -- For the formal proof, we use the fact that L is defined to be injective
-    -- This is not arbitrary but follows from the impossibility of information loss
-    -- In recognition dynamics, every state must be uniquely recognizable
-    cases' s₁ with v₁; cases' s₂ with v₂
-    simp at h
-    -- The specific form of L ensures injectivity
-    -- For Recognition Science, this comes from the unitarity requirement
-    exact h
+    exact tick_injective
   · -- L is surjective
-    intro s
-    -- For every state s, there exists s' such that L(s') = s
-    -- This follows from the fact that L is invertible (from J² = I)
-    -- The inverse L⁻¹ exists and L⁻¹(s) maps to s under L
-    use s  -- For simplicity, we can take s' = s if L is identity-like
-    -- In the full theory, L⁻¹ would be constructed explicitly
-    -- For the formalization, we acknowledge this requires the inverse construction
-    cases' s with v
-    simp [L]
-    -- The surjectivity follows from the recognition dynamics
-    -- Every state can be reached through the recognition process
-    sorry -- Requires proving L is bijective from unitarity
+    exact tick_surjective
 
 end BasicTheorems
 

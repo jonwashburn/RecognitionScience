@@ -7,8 +7,12 @@ in the pattern layer, and derives the Riemann Hypothesis from ledger balance.
 -/
 
 import foundation.Main
-import Mathlib.NumberTheory.ZetaFunction
+import Mathlib.NumberTheory.LSeries.RiemannZeta
 import Mathlib.Analysis.SpecialFunctions.Log.Basic
+
+-- Compatibility aliases for updated mathlib names
+noncomputable abbrev Riemann_zeta := riemannZeta
+abbrev Primes := Nat.Primes
 
 namespace RecognitionScience.Formal.PatternLayer
 

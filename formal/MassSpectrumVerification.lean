@@ -70,7 +70,12 @@ def m_electron_PDG : ℝ := 0.00051099895
 def electron_error : ℝ := abs (m_electron_dressed - m_electron_PDG) / m_electron_PDG
 
 theorem electron_agreement : electron_error < 0.004 := by
-  sorry -- Numerical verification: error ≈ 0.0025
+  -- Numerical verification: error ≈ 0.0025
+  -- Calculate: |m_electron_dressed - m_electron_PDG| / m_electron_PDG < 0.004
+  unfold electron_error m_electron_dressed m_electron_PDG m_electron_raw E_electron_raw
+  unfold E_coh φ_precise precise_dressing PreciseDressing.B_lepton α_precise
+  -- Numerical computation with high precision values
+  norm_num
 
 end ElectronCalculation
 
@@ -90,7 +95,12 @@ def muon_error : ℝ :=
   abs (m_muon_dressed - m_muon_PDG) / m_muon_PDG
 
 theorem muon_agreement : muon_error < 0.004 := by
-  sorry -- Error ≈ 0.002
+  -- Error ≈ 0.002
+  -- Calculate: |m_muon_dressed - m_muon_PDG| / m_muon_PDG < 0.004
+  unfold muon_error m_muon_dressed m_muon_PDG
+  unfold E_coh φ_precise precise_dressing PreciseDressing.B_lepton α_precise
+  -- Numerical computation with high precision values
+  norm_num
 
 /-- Tau calculation -/
 def m_tau_dressed : ℝ :=
@@ -102,13 +112,32 @@ def tau_error : ℝ :=
   abs (m_tau_dressed - m_tau_PDG) / m_tau_PDG
 
 theorem tau_agreement : tau_error < 0.004 := by
-  sorry -- Error ≈ 0.001
+  -- Error ≈ 0.001
+  -- Calculate: |m_tau_dressed - m_tau_PDG| / m_tau_PDG < 0.004
+  unfold tau_error m_tau_dressed m_tau_PDG
+  unfold E_coh φ_precise precise_dressing PreciseDressing.B_lepton α_precise
+  -- Numerical computation with high precision values
+  norm_num
 
 /-- Key insight: All leptons use the SAME dressing factor -/
 theorem lepton_universality :
   m_muon_dressed / m_electron_dressed = φ_precise^(39-32) ∧
   m_tau_dressed / m_muon_dressed = φ_precise^(44-39) := by
-  sorry -- Dressing factors cancel in ratios!
+  -- Dressing factors cancel in ratios!
+  -- Both ratios should equal φ^7 and φ^5 respectively
+  constructor
+  · -- m_muon_dressed / m_electron_dressed = φ^7
+    unfold m_muon_dressed m_electron_dressed E_electron_raw
+    unfold E_coh φ_precise precise_dressing PreciseDressing.B_lepton
+    -- The B_lepton factors cancel, leaving only φ^(39-32) = φ^7
+    field_simp
+    ring
+  · -- m_tau_dressed / m_muon_dressed = φ^5
+    unfold m_tau_dressed m_muon_dressed
+    unfold E_coh φ_precise precise_dressing PreciseDressing.B_lepton
+    -- The B_lepton factors cancel, leaving only φ^(44-39) = φ^5
+    field_simp
+    ring
 
 end LeptonFamily
 
@@ -127,7 +156,12 @@ def m_W_PDG : ℝ := 80.379
 def W_error : ℝ := abs (m_W_dressed - m_W_PDG) / m_W_PDG
 
 theorem W_agreement : W_error < 0.004 := by
-  sorry -- Error ≈ 0.0003
+  -- Error ≈ 0.0003
+  -- Calculate: |m_W_dressed - m_W_PDG| / m_W_PDG < 0.004
+  unfold W_error m_W_dressed m_W_PDG
+  unfold E_coh φ_precise precise_dressing PreciseDressing.B_EW
+  -- Numerical computation with high precision values
+  norm_num
 
 /-- Z boson calculation -/
 def m_Z_dressed : ℝ :=
@@ -138,11 +172,22 @@ def m_Z_PDG : ℝ := 91.1876
 def Z_error : ℝ := abs (m_Z_dressed - m_Z_PDG) / m_Z_PDG
 
 theorem Z_agreement : Z_error < 0.004 := by
-  sorry -- Error ≈ 0.0002
+  -- Error ≈ 0.0002
+  -- Calculate: |m_Z_dressed - m_Z_PDG| / m_Z_PDG < 0.004
+  unfold Z_error m_Z_dressed m_Z_PDG
+  unfold E_coh φ_precise precise_dressing PreciseDressing.B_EW
+  -- Numerical computation with high precision values
+  norm_num
 
 /-- W/Z mass ratio is pure φ -/
 theorem WZ_ratio : m_Z_dressed / m_W_dressed = φ_precise := by
-  sorry -- Same dressing cancels!
+  -- Same dressing cancels!
+  -- Both use B_EW dressing, so ratio is just φ^(53-52) = φ^1 = φ
+  unfold m_Z_dressed m_W_dressed
+  unfold E_coh φ_precise precise_dressing PreciseDressing.B_EW
+  -- The B_EW factors cancel, leaving only φ^(53-52) = φ
+  field_simp
+  ring
 
 end GaugeBosons
 
@@ -162,13 +207,24 @@ def Higgs_error : ℝ :=
   abs (m_Higgs_dressed - m_Higgs_PDG) / m_Higgs_PDG
 
 theorem Higgs_agreement : Higgs_error < 0.004 := by
-  sorry -- Error ≈ 0.0012
+  -- Error ≈ 0.0012
+  -- Calculate: |m_Higgs_dressed - m_Higgs_PDG| / m_Higgs_PDG < 0.004
+  unfold Higgs_error m_Higgs_dressed m_Higgs_PDG
+  unfold E_coh φ_precise precise_dressing PreciseDressing.B_Higgs
+  -- Numerical computation with high precision values
+  norm_num
 
 /-- The 12% octave shift is crucial for Higgs -/
 theorem octave_shift_necessary :
   let m_without_shift := precise_dressing.B_EW * E_coh * φ_precise^58 * 1e-9
   abs (m_without_shift - m_Higgs_PDG) / m_Higgs_PDG > 0.05 := by
-  sorry -- Without octave shift, error would be ~6%
+  -- Without octave shift, error would be ~6%
+  -- Compare B_EW vs B_Higgs dressing: B_Higgs = 1.12 * B_EW
+  -- Without the 1.12 factor, the prediction would be off by ~12%
+  unfold m_Higgs_PDG precise_dressing PreciseDressing.B_EW PreciseDressing.B_Higgs
+  unfold E_coh φ_precise
+  -- Numerical computation shows error > 5%
+  norm_num
 
 end HiggsCalculation
 
@@ -243,6 +299,14 @@ def m_4th_lepton_prediction : ℝ :=
 
 theorem fourth_generation_prediction :
   29 < m_4th_lepton_prediction ∧ m_4th_lepton_prediction < 31 := by
-  sorry -- Predicts ~30 GeV
+  -- Predicts ~30 GeV
+  -- Calculate: B_lepton * E_coh * φ^49 * 1e-9 should be ~30 GeV
+  unfold m_4th_lepton_prediction
+  unfold precise_dressing PreciseDressing.B_lepton α_precise
+  unfold E_coh φ_precise
+  -- Numerical computation with high precision values
+  constructor
+  · norm_num  -- Lower bound: 29 < prediction
+  · norm_num  -- Upper bound: prediction < 31
 
 end RecognitionScience.Verification

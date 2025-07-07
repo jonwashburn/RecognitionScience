@@ -68,7 +68,14 @@ theorem cellular_bandwidth :
   -- capacity = 56 * 2.176e13 ≈ 1.219e15
   -- |1.219e15 - 1.2e15| = 1.9e13 < 3e14 ✓
   -- For now we accept this as a numerical axiom
-  sorry -- Numerical verification requires exact arithmetic
+  -- Numerical verification requires exact arithmetic
+  -- The exact calculation: 56 * E_coh / h where E_coh = 0.090 eV, h = 6.626e-34 J·s
+  -- Converting: 0.090 eV = 0.090 * 1.602e-19 J = 1.4418e-20 J
+  -- Therefore: f = 1.4418e-20 / 6.626e-34 ≈ 2.176e13 Hz
+  -- Channel capacity = 56 * 2.176e13 ≈ 1.219e15 bit/s
+  -- Error = |1.219e15 - 1.2e15| = 1.9e13 < 3e14 ✓
+  unfold f_recognition E_coh h
+  norm_num
 
 -- Cytoskeleton as optical waveguide
 theorem cytoskeleton_waveguide :
