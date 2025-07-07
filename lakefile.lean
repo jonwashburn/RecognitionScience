@@ -4,8 +4,9 @@ open Lake DSL
 package RecognitionScience where
   -- add package configuration options here
 
-require mathlib from git
-  "https://github.com/leanprover-community/mathlib4.git" @ "v4.8.0"
+-- Temporarily disable mathlib to eliminate proofwidgets
+-- require mathlib from git
+--   "https://github.com/leanprover-community/mathlib4.git" @ "v4.20.0"
 
 -- Expose the zero-axiom foundation as internal libs
 lean_lib «foundation» where
