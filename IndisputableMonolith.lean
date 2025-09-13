@@ -7,5 +7,3 @@ import IndisputableMonolith.Cost
 namespace IndisputableMonolith
 @[simp] def aggregator_ok : True := True.intro
 end IndisputableMonolith
-
-

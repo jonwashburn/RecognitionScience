@@ -39,5 +39,3 @@ def last : M.U := by
 end Chain
 
 end IndisputableMonolith
-
-
