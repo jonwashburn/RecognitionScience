@@ -4,7 +4,7 @@ import Manifest.Generators
 import Manifest.RouteA
 import Manifest.RouteB
 import Manifest.Lambda
-import monolith.EightBeat
+import Monolith.EightBeat
 
 #eval Manifest.routeA
 #eval Manifest.routeB
