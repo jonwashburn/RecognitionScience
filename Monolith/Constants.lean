@@ -26,8 +26,8 @@ end Monolith
 @[simp] theorem phi_gt_half : (1:ℝ)/2 < Monolith.phi := by
   unfold Monolith.phi
   have hs : 0 < Real.sqrt 5 := Real.sqrt_pos.mpr (by norm_num)
-  have h1 : (1:ℝ) < 1 + Real.sqrt 5 := by
-    have := (add_lt_add_left hs 1)
-    simpa [one_mul, one_add] using this
-  have hden : 0 < (2:ℝ) := by norm_num
-  exact (div_lt_div_right hden).mpr h1
+  have h1 : (1:ℝ) < 1 + Real.sqrt 5 := by linarith
+  have hpos : 0 < (1:ℝ) / 2 := by norm_num
+  have := mul_lt_mul_of_pos_left h1 hpos
+  -- (1/2)*1 < (1/2)*(1+√5) ↔ 1/2 < (1+√5)/2
+  simpa [mul_comm, mul_left_comm, mul_assoc, one_mul, mul_one, div_eq_mul_inv] using this
