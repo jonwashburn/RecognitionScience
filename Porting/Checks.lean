@@ -9,6 +9,7 @@ import IndisputableMonolith.Causality
 import IndisputableMonolith.LedgerUnits
 import IndisputableMonolith.LightCone
 import IndisputableMonolith.UnitMapping
+import IndisputableMonolith.URC.RouteA
 
 /-! Porting checks: ensures key symbols exist and typecheck. -/
 
@@ -73,5 +74,11 @@ import IndisputableMonolith.UnitMapping
 #check IndisputableMonolith.UnitMapping.mapDeltaCharge
 #check IndisputableMonolith.UnitMapping.mapDeltaTime
 #check IndisputableMonolith.UnitMapping.mapDeltaAction
+
+-- Route A
+#check IndisputableMonolith.URC.BridgeAxioms.MeasurementAxioms
+#check IndisputableMonolith.URC.BridgeAxioms.bridge_inevitability
+#check IndisputableMonolith.URC.BridgeAxioms.Manifest.bridge
+#check IndisputableMonolith.URCAdapters.routeA_end_to_end_demo
 
 /-! Add new checks here as modules are ported. -/

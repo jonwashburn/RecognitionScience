@@ -77,5 +77,3 @@ lemma mapDelta_diff_toZ (δ : ℤ) (hδ : δ ≠ 0) (f : AffineMapZ)
 
 end UnitMapping
 end IndisputableMonolith
-
-
