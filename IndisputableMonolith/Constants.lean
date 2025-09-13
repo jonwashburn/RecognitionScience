@@ -28,6 +28,7 @@ noncomputable section
 structure RSUnits where
   tau0 : ℝ
   ell0 : ℝ
+  Ecoh : ℝ
 
 /-- Speed `c` derived from unit ratio. -/
 @[simp] def c (U : RSUnits) : ℝ := U.ell0 / U.tau0

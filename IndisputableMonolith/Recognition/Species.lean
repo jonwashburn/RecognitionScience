@@ -11,5 +11,3 @@ structure Species where
 
 end Recognition
 end IndisputableMonolith
-
-

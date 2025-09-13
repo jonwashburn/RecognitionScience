@@ -142,6 +142,7 @@ import IndisputableMonolith.Spectra.Core
 -- Masses
 #check IndisputableMonolith.Masses.Derivation.massCanonUnits
 #check IndisputableMonolith.Masses.Derivation.massCanonUnits_rshift
+#check IndisputableMonolith.Constants.RSUnits.RSUnits
 
 -- Recognition / Spectra
 #check IndisputableMonolith.Recognition.PhiPow

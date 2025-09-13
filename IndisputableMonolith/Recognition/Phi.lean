@@ -13,5 +13,3 @@ namespace Recognition
 
 end Recognition
 end IndisputableMonolith
-
-

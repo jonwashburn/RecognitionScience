@@ -9,5 +9,3 @@ namespace Spectra
 
 end Spectra
 end IndisputableMonolith
-
-
