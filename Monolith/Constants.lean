@@ -7,7 +7,7 @@ noncomputable section
 @[simp] def phi : ℝ := (1 + Real.sqrt 5) / 2
 
 @[simp] theorem phi_pos : 0 < phi := by
-  unfold phi
+  unfold Monolith.phi
   have h5 : (0:ℝ) < 5 := by norm_num
   have hs : 0 < Real.sqrt 5 := Real.sqrt_pos.mpr h5
   have hnum : 0 < 1 + Real.sqrt 5 := by
@@ -23,8 +23,8 @@ end
 end Monolith
 
 
-@[simp] theorem phi_gt_half : (1:ℝ)/2 < phi := by
-  unfold phi
+@[simp] theorem phi_gt_half : (1:ℝ)/2 < Monolith.phi := by
+  unfold Monolith.phi
   have hs : 0 < Real.sqrt 5 := Real.sqrt_pos.mpr (by norm_num)
   have h1 : (1:ℝ) < 1 + Real.sqrt 5 := by
     have := (add_lt_add_left hs 1)
