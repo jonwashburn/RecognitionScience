@@ -21,3 +21,13 @@ noncomputable section
 
 end
 end Monolith
+
+
+@[simp] theorem phi_gt_half : (1:ℝ)/2 < phi := by
+  unfold phi
+  have hs : 0 < Real.sqrt 5 := Real.sqrt_pos.mpr (by norm_num)
+  have h1 : (1:ℝ) < 1 + Real.sqrt 5 := by
+    have := (add_lt_add_left hs 1)
+    simpa [one_mul, one_add] using this
+  have hden : 0 < (2:ℝ) := by norm_num
+  exact (div_lt_div_right hden).mpr h1
