@@ -2,6 +2,7 @@ import Mathlib
 import IndisputableMonolith.Core
 import IndisputableMonolith.Constants
 import IndisputableMonolith.Cost
+import IndisputableMonolith.URC.RouteB
 
 /-! Porting checks: ensures key symbols exist and typecheck. -/
 
@@ -22,6 +23,9 @@ import IndisputableMonolith.Cost
 -- Cost
 #check IndisputableMonolith.Jlog
 
+-- Route B
+#check IndisputableMonolith.URCGenerators.VerifiedGenerators
+#check IndisputableMonolith.URCGenerators.determination_by_generators
+#check IndisputableMonolith.URCGenerators.routeB_report
+
 /-! Add new checks here as modules are ported. -/
-
-
