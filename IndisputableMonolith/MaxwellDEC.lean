@@ -52,5 +52,3 @@ structure Equations (α : Type) [HasCoboundary α] [HasHodge α] (M : Medium α)
 
 end MaxwellDEC
 end IndisputableMonolith
-
-

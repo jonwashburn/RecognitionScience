@@ -11,6 +11,8 @@ import IndisputableMonolith.LightCone
 import IndisputableMonolith.UnitMapping
 import IndisputableMonolith.URC.RouteA
 import IndisputableMonolith.MaxwellDEC
+import IndisputableMonolith.Complexity.VertexCover
+import IndisputableMonolith.Complexity.RSVC
 
 /-! Porting checks: ensures key symbols exist and typecheck. -/
 
@@ -90,5 +92,11 @@ import IndisputableMonolith.MaxwellDEC
 #check IndisputableMonolith.MaxwellDEC.Medium
 #check IndisputableMonolith.MaxwellDEC.Sources
 #check IndisputableMonolith.MaxwellDEC.Equations
+
+-- Complexity
+#check IndisputableMonolith.Complexity.VertexCover.Instance
+#check IndisputableMonolith.Complexity.VertexCover.HasCover
+#check IndisputableMonolith.Complexity.RSVC.ConstraintInstance
+#check IndisputableMonolith.Complexity.RSVC.rs_preserving_RS2VC
 
 /-! Add new checks here as modules are ported. -/
