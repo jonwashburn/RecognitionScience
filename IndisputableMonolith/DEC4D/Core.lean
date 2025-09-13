@@ -12,5 +12,3 @@ structure Lattice where
 
 end DEC4D
 end IndisputableMonolith
-
-

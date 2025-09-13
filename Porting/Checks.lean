@@ -1,3 +1,7 @@
+import IndisputableMonolith.Gaps.BeatTimeLagBarrierGroup
+-- Gap45 / Beat / TimeLag / RecognitionBarrier / GroupView / AddGroupView
+#check IndisputableMonolith.Gap45.coprime_9_5
+#check IndisputableMonolith.Gap45.Beats.beats
 import Mathlib
 import IndisputableMonolith.Core
 import IndisputableMonolith.Constants

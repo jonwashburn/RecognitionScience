@@ -12,5 +12,3 @@ structure Params where
 
 end MaxwellModel
 end IndisputableMonolith
-
-
