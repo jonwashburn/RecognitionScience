@@ -12,5 +12,3 @@ namespace Dobrushin
 end Dobrushin
 end YM
 end IndisputableMonolith
-
-

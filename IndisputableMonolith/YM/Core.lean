@@ -12,5 +12,3 @@ structure GaugeField where
 
 end YM
 end IndisputableMonolith
-
-

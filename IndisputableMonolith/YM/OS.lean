@@ -12,5 +12,3 @@ namespace OS
 end OS
 end YM
 end IndisputableMonolith
-
-

@@ -12,5 +12,3 @@ namespace PF3x3
 end PF3x3
 end YM
 end IndisputableMonolith
-
-

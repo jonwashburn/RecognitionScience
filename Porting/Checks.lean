@@ -28,6 +28,9 @@ import IndisputableMonolith.YM.Core
 import IndisputableMonolith.YM.Dobrushin
 import IndisputableMonolith.YM.OS
 import IndisputableMonolith.YM.PF3x3
+import IndisputableMonolith.RSBridge.Core
+import IndisputableMonolith.Invariants.Core
+import IndisputableMonolith.TruthCore.Core
 
 /-! Porting checks: ensures key symbols exist and typecheck. -/
 
@@ -159,5 +162,11 @@ import IndisputableMonolith.YM.PF3x3
 #check IndisputableMonolith.YM.Dobrushin.bound_ok
 #check IndisputableMonolith.YM.OS.axioms_ok
 #check IndisputableMonolith.YM.PF3x3.value
+
+-- RSBridge / Invariants / TruthCore
+#check IndisputableMonolith.RSBridge.Bridge
+#check IndisputableMonolith.RSBridge.UniqueCalibration
+#check IndisputableMonolith.Invariants.ok
+#check IndisputableMonolith.TruthCore.ok
 
 /-! Add new checks here as modules are ported. -/
