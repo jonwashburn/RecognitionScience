@@ -88,5 +88,3 @@ def kOf (δ : ℤ) (p : DeltaSub δ) : Nat := Int.toNat (toZ δ p)
 
 end LedgerUnits
 end IndisputableMonolith
-
-
