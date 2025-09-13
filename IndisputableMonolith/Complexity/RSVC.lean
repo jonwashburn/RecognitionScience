@@ -37,5 +37,3 @@ structure RSPreserving (A B : Type) where
 end RSVC
 end Complexity
 end IndisputableMonolith
-
-

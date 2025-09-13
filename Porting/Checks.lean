@@ -13,6 +13,14 @@ import IndisputableMonolith.URC.RouteA
 import IndisputableMonolith.MaxwellDEC
 import IndisputableMonolith.Complexity.VertexCover
 import IndisputableMonolith.Complexity.RSVC
+import IndisputableMonolith.URC.Adapters
+import IndisputableMonolith.Ethics.TruthConsent
+import IndisputableMonolith.DEC.Cochain
+import IndisputableMonolith.Gravity.ILG
+import IndisputableMonolith.Quantum.Core
+import IndisputableMonolith.Pipelines.GapCurv
+import IndisputableMonolith.Dynamics.StakeNecExamples
+import IndisputableMonolith.Masses.Derivation
 
 /-! Porting checks: ensures key symbols exist and typecheck. -/
 
@@ -98,5 +106,38 @@ import IndisputableMonolith.Complexity.RSVC
 #check IndisputableMonolith.Complexity.VertexCover.HasCover
 #check IndisputableMonolith.Complexity.RSVC.ConstraintInstance
 #check IndisputableMonolith.Complexity.RSVC.rs_preserving_RS2VC
+
+-- URC Adapters
+#check IndisputableMonolith.URCAdapters.routeAB_report
+#check IndisputableMonolith.URCAdapters.grand_manifest
+
+-- Ethics / Truth / Consent
+#check IndisputableMonolith.Ethics.ConsentWindow
+#check IndisputableMonolith.Ethics.ConsentLedger
+#check IndisputableMonolith.Ethics.Decision
+
+-- DEC / Cochain
+#check IndisputableMonolith.DEC.CochainSpace
+
+-- Gravity / ILG
+#check IndisputableMonolith.Gravity.ILG.Kernel
+
+-- Quantum
+#check IndisputableMonolith.Quantum.Path
+#check IndisputableMonolith.Quantum.born_rule
+
+-- Pipelines
+#check IndisputableMonolith.Pipelines.GapSeries.report
+#check IndisputableMonolith.Pipelines.Curvature.report
+
+-- Dynamics / Stake / Examples
+#check IndisputableMonolith.StakeGraph.Stake
+#check IndisputableMonolith.Dynamics.State
+#check IndisputableMonolith.NecessityCascade.ok
+#check IndisputableMonolith.Examples.hello
+
+-- Masses
+#check IndisputableMonolith.Masses.Derivation.massCanonUnits
+#check IndisputableMonolith.Masses.Derivation.massCanonUnits_rshift
 
 /-! Add new checks here as modules are ported. -/

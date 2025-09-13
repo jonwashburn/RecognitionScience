@@ -38,5 +38,3 @@ lemma example_hasCover : HasCover example := by
 end VertexCover
 end Complexity
 end IndisputableMonolith
-
-
