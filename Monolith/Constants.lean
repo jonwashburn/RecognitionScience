@@ -31,3 +31,6 @@ end Monolith
   have := mul_lt_mul_of_pos_left h1 hpos
   -- (1/2)*1 < (1/2)*(1+√5) ↔ 1/2 < (1+√5)/2
   simpa [mul_comm, mul_left_comm, mul_assoc, one_mul, mul_one, div_eq_mul_inv] using this
+
+
+@[simp] theorem phi_ne_zero : Monolith.phi ≠ 0 := ne_of_gt Monolith.phi_pos
