@@ -18,4 +18,3 @@ import Monolith.Constants
 #eval Lambda.report
 #eval Monolith.report
 #eval Monolith.constsReport
-#eval Monolith.boundReport
