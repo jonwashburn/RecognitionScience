@@ -19,5 +19,3 @@ structure Decision where
 
 end Ethics
 end IndisputableMonolith
-
-

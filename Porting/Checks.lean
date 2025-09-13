@@ -21,6 +21,9 @@ import IndisputableMonolith.Quantum.Core
 import IndisputableMonolith.Pipelines.GapCurv
 import IndisputableMonolith.Dynamics.StakeNecExamples
 import IndisputableMonolith.Masses.Derivation
+import IndisputableMonolith.Recognition.Phi
+import IndisputableMonolith.Recognition.Species
+import IndisputableMonolith.Spectra.Core
 
 /-! Porting checks: ensures key symbols exist and typecheck. -/
 
@@ -139,5 +142,10 @@ import IndisputableMonolith.Masses.Derivation
 -- Masses
 #check IndisputableMonolith.Masses.Derivation.massCanonUnits
 #check IndisputableMonolith.Masses.Derivation.massCanonUnits_rshift
+
+-- Recognition / Spectra
+#check IndisputableMonolith.Recognition.PhiPow
+#check IndisputableMonolith.Recognition.Species
+#check IndisputableMonolith.Spectra.B_of
 
 /-! Add new checks here as modules are ported. -/

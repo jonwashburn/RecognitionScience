@@ -12,5 +12,3 @@ structure CochainSpace (α : Type) where
 
 end DEC
 end IndisputableMonolith
-
-

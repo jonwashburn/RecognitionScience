@@ -14,5 +14,3 @@ structure Kernel where
 end ILG
 end Gravity
 end IndisputableMonolith
-
-

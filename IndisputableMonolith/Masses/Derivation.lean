@@ -25,5 +25,3 @@ lemma massCanonUnits_rshift (U : Constants.RSUnits.RSUnits) (r : ℤ) (Z : ℤ) 
 end Derivation
 end Masses
 end IndisputableMonolith
-
-

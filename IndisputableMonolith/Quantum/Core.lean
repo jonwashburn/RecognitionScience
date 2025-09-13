@@ -14,5 +14,3 @@ structure Path (α : Type) where
 
 end Quantum
 end IndisputableMonolith
-
-
