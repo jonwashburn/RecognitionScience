@@ -24,6 +24,10 @@ import IndisputableMonolith.Masses.Derivation
 import IndisputableMonolith.Recognition.Phi
 import IndisputableMonolith.Recognition.Species
 import IndisputableMonolith.Spectra.Core
+import IndisputableMonolith.YM.Core
+import IndisputableMonolith.YM.Dobrushin
+import IndisputableMonolith.YM.OS
+import IndisputableMonolith.YM.PF3x3
 
 /-! Porting checks: ensures key symbols exist and typecheck. -/
 
@@ -148,5 +152,12 @@ import IndisputableMonolith.Spectra.Core
 #check IndisputableMonolith.Recognition.PhiPow
 #check IndisputableMonolith.Recognition.Species
 #check IndisputableMonolith.Spectra.B_of
+
+-- YM
+#check IndisputableMonolith.YM.GaugeField
+#check IndisputableMonolith.YM.action
+#check IndisputableMonolith.YM.Dobrushin.bound_ok
+#check IndisputableMonolith.YM.OS.axioms_ok
+#check IndisputableMonolith.YM.PF3x3.value
 
 /-! Add new checks here as modules are ported. -/
