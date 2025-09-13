@@ -5,7 +5,7 @@ import Manifest.RouteA
 import Manifest.RouteB
 import Manifest.Lambda
 import Monolith.EightBeat
-import RH.RS.BoundaryWedgeFacade
+import Monolith.Constants
 
 #eval Manifest.routeA
 #eval Manifest.routeB
@@ -17,3 +17,4 @@ import RH.RS.BoundaryWedgeFacade
 #eval RouteB.report
 #eval Lambda.report
 #eval Monolith.report
+#eval Monolith.constsReport
