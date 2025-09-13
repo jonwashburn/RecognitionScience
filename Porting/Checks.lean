@@ -10,6 +10,7 @@ import IndisputableMonolith.LedgerUnits
 import IndisputableMonolith.LightCone
 import IndisputableMonolith.UnitMapping
 import IndisputableMonolith.URC.RouteA
+import IndisputableMonolith.MaxwellDEC
 
 /-! Porting checks: ensures key symbols exist and typecheck. -/
 
@@ -80,5 +81,14 @@ import IndisputableMonolith.URC.RouteA
 #check IndisputableMonolith.URC.BridgeAxioms.bridge_inevitability
 #check IndisputableMonolith.URC.BridgeAxioms.Manifest.bridge
 #check IndisputableMonolith.URCAdapters.routeA_end_to_end_demo
+
+-- Maxwell DEC
+#check IndisputableMonolith.MaxwellDEC.Simplex
+#check IndisputableMonolith.MaxwellDEC.DForm
+#check IndisputableMonolith.MaxwellDEC.HasCoboundary
+#check IndisputableMonolith.MaxwellDEC.HasHodge
+#check IndisputableMonolith.MaxwellDEC.Medium
+#check IndisputableMonolith.MaxwellDEC.Sources
+#check IndisputableMonolith.MaxwellDEC.Equations
 
 /-! Add new checks here as modules are ported. -/

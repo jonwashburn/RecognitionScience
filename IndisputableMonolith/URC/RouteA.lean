@@ -68,5 +68,3 @@ namespace URCAdapters
 
 end URCAdapters
 end IndisputableMonolith
-
-
