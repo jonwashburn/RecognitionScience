@@ -12,7 +12,7 @@ noncomputable section
   have hs : 0 < Real.sqrt 5 := Real.sqrt_pos.mpr h5
   have hnum : 0 < 1 + Real.sqrt 5 := by have : (0:ℝ) < 1 := by norm_num; linarith
   have hden : 0 < (2:ℝ) := by norm_num
-  exact (div_pos_iff.mpr ⟨hnum, hden⟩)
+  exact (div_pos hnum hden)
 
 @[simp] def constsReport : String := "Constants: phi defined and positive."
 
