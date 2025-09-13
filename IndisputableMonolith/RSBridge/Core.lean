@@ -26,5 +26,3 @@ structure Bands where
 
 end RSBridge
 end IndisputableMonolith
-
-

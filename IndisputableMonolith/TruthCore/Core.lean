@@ -9,5 +9,3 @@ namespace TruthCore
 
 end TruthCore
 end IndisputableMonolith
-
-

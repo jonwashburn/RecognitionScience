@@ -31,6 +31,10 @@ import IndisputableMonolith.YM.PF3x3
 import IndisputableMonolith.RSBridge.Core
 import IndisputableMonolith.Invariants.Core
 import IndisputableMonolith.TruthCore.Core
+import IndisputableMonolith.DEC4D.Core
+import IndisputableMonolith.Complex4D.Core
+import IndisputableMonolith.MaxwellModel.Core
+import IndisputableMonolith.MaxwellModel4D.Core
 
 /-! Porting checks: ensures key symbols exist and typecheck. -/
 
@@ -168,5 +172,11 @@ import IndisputableMonolith.TruthCore.Core
 #check IndisputableMonolith.RSBridge.UniqueCalibration
 #check IndisputableMonolith.Invariants.ok
 #check IndisputableMonolith.TruthCore.ok
+
+-- 4D DEC / Complex / Maxwell
+#check IndisputableMonolith.DEC4D.Lattice
+#check IndisputableMonolith.Complex4D.Field
+#check IndisputableMonolith.MaxwellModel.Params
+#check IndisputableMonolith.MaxwellModel4D.Params
 
 /-! Add new checks here as modules are ported. -/

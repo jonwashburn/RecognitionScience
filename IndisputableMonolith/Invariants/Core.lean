@@ -9,5 +9,3 @@ namespace Invariants
 
 end Invariants
 end IndisputableMonolith
-
-
