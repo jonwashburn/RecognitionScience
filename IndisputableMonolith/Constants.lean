@@ -32,6 +32,8 @@ structure RSUnits where
 /-- Speed `c` derived from unit ratio. -/
 @[simp] def c (U : RSUnits) : ℝ := U.ell0 / U.tau0
 
+@[simp] def hbar (_U : RSUnits) : ℝ := 1
+
 @[simp] theorem ell0_div_tau0_eq_c (U : RSUnits) : U.ell0 / U.tau0 = U.c := rfl
 
 end

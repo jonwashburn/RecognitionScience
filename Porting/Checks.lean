@@ -8,6 +8,7 @@ import IndisputableMonolith.ParityEight
 import IndisputableMonolith.Causality
 import IndisputableMonolith.LedgerUnits
 import IndisputableMonolith.LightCone
+import IndisputableMonolith.UnitMapping
 
 /-! Porting checks: ensures key symbols exist and typecheck. -/
 
@@ -65,5 +66,12 @@ import IndisputableMonolith.LightCone
 #check IndisputableMonolith.LightCone.StepBounds.reach_time_eq
 #check IndisputableMonolith.LightCone.StepBounds.reach_rad_le
 #check IndisputableMonolith.LightCone.StepBounds.cone_bound
+
+-- UnitMapping
+#check IndisputableMonolith.UnitMapping.AffineMapZ
+#check IndisputableMonolith.UnitMapping.mapDelta
+#check IndisputableMonolith.UnitMapping.mapDeltaCharge
+#check IndisputableMonolith.UnitMapping.mapDeltaTime
+#check IndisputableMonolith.UnitMapping.mapDeltaAction
 
 /-! Add new checks here as modules are ported. -/
