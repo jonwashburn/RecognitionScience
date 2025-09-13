@@ -58,5 +58,3 @@ theorem period_exactly_8 : ∃ w : CompleteCover 3, w.period = 8 := by
   simpa using cover_exact_pow 3
 
 end IndisputableMonolith
-
-

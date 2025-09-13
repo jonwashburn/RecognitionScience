@@ -6,6 +6,7 @@ import IndisputableMonolith.URC.RouteB
 import IndisputableMonolith.Ledger
 import IndisputableMonolith.ParityEight
 import IndisputableMonolith.Causality
+import IndisputableMonolith.LedgerUnits
 
 /-! Porting checks: ensures key symbols exist and typecheck. -/
 
@@ -49,5 +50,13 @@ import IndisputableMonolith.Causality
 #check IndisputableMonolith.Causality.ballP
 #check IndisputableMonolith.ConeBound.ballFS
 #check IndisputableMonolith.ConeBound.ballFS_card_le_geom
+
+-- LedgerUnits
+#check IndisputableMonolith.LedgerUnits.DeltaSub
+#check IndisputableMonolith.LedgerUnits.equiv_delta_one
+#check IndisputableMonolith.LedgerUnits.fromZ
+#check IndisputableMonolith.LedgerUnits.toZ
+#check IndisputableMonolith.LedgerUnits.rungOf
+#check IndisputableMonolith.LedgerUnits.kOf
 
 /-! Add new checks here as modules are ported. -/

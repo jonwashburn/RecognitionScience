@@ -58,5 +58,3 @@ theorem T3_continuity {M} (L : Ledger M) [Conserves L] :
   ∀ ch : Chain M, ch.head = ch.last → chainFlux L ch = 0 := Conserves.conserve
 
 end IndisputableMonolith
-
-
