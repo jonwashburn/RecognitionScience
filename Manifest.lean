@@ -3,6 +3,7 @@ import Manifest.Axioms
 import Manifest.Generators
 import Manifest.RouteA
 import Manifest.RouteB
+import Manifest.Lambda
 
 #eval Manifest.routeA
 #eval Manifest.routeB
@@ -12,3 +13,4 @@ import Manifest.RouteB
 #eval Manifest.Generators.routeB
 #eval RouteA.report
 #eval RouteB.report
+#eval Lambda.report
