@@ -3,6 +3,9 @@ import IndisputableMonolith.Core
 import IndisputableMonolith.Constants
 import IndisputableMonolith.Cost
 import IndisputableMonolith.URC.RouteB
+import IndisputableMonolith.Ledger
+import IndisputableMonolith.ParityEight
+import IndisputableMonolith.Causality
 
 /-! Porting checks: ensures key symbols exist and typecheck. -/
 
@@ -27,5 +30,24 @@ import IndisputableMonolith.URC.RouteB
 #check IndisputableMonolith.URCGenerators.VerifiedGenerators
 #check IndisputableMonolith.URCGenerators.determination_by_generators
 #check IndisputableMonolith.URCGenerators.routeB_report
+
+-- Ledger/T2/T3
+#check IndisputableMonolith.Ledger
+#check IndisputableMonolith.AtomicTick
+#check IndisputableMonolith.T2_atomicity
+#check IndisputableMonolith.T3_continuity
+
+-- Parity/Eight
+#check IndisputableMonolith.Pattern
+#check IndisputableMonolith.CompleteCover
+#check IndisputableMonolith.eight_tick_min
+#check IndisputableMonolith.period_exactly_8
+
+-- Causality/ConeBound
+#check IndisputableMonolith.Causality.Kinematics
+#check IndisputableMonolith.Causality.ReachN
+#check IndisputableMonolith.Causality.ballP
+#check IndisputableMonolith.ConeBound.ballFS
+#check IndisputableMonolith.ConeBound.ballFS_card_le_geom
 
 /-! Add new checks here as modules are ported. -/
