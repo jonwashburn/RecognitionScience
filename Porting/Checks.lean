@@ -1,7 +1,14 @@
 import IndisputableMonolith.Gaps.BeatTimeLagBarrierGroup
+import IndisputableMonolith.Recognition.CertificationRSBridge
 -- Gap45 / Beat / TimeLag / RecognitionBarrier / GroupView / AddGroupView
 #check IndisputableMonolith.Gap45.coprime_9_5
-#check IndisputableMonolith.Gap45.Beats.beats
+#check IndisputableMonolith.Gap45.Beat.beats
+
+-- Recognition Certification / RSBridge
+#check IndisputableMonolith.Recognition.Certification.Interval
+#check IndisputableMonolith.Recognition.Certification.zeroWidthCert_valid
+#check IndisputableMonolith.RSBridge.Fermion
+#check IndisputableMonolith.RSBridge.anchor_ratio
 import Mathlib
 import IndisputableMonolith.Core
 import IndisputableMonolith.Constants
